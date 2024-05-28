@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de número primo</title>
+</head>
+<body>
+    <h1>Verificador de número primo</h1>
+    Digite um número: <input type="number" name="" id="txtnumero">
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="res"></div>
+    <script>
+        function verificar() {
+            var txtnumero = document.getElementById('txtnumero')
+            var res = document.getElementById('res')
+            var numero = Number(txtnumero.value)
+            res.innerHTML = 'O número: ' + numero + ' '
+            if (numero <= 1) {
+                res.innerHTML += 'não é primo'
+            } else {
+                var primo = true
+                for (var i = 2; i <= Math.sqrt(numero); i++) {
+                    if (numero % i === 0) {
+                        primo = false
+                        break
+                    }   
+                }
+                if (primo) {
+                    res.innerHTML += 'é primo. '
+                } else {
+                    res.innerHTML += 'não é primo. '
+                }
+            }
+        }
+    </script>
+</body>
+</html>

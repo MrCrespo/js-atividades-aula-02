@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Desconto</title>
+</head>
+<body>
+    <h1>Verificador de Desconto</h1>
+    Preço: <input type="number" name="" id="txtpreço"> Idade: <input type="number" name="" id="txtidade">
+    <input type="button" value="Calcular" onclick="calcular()">
+    <div id="res">
+
+    </div>
+    <script>
+        function calcular() {
+            var txtpreço = document.getElementById('txtpreço').value
+            var txtidade = document.getElementById('txtidade').value
+            var preço = Number(txtpreço)
+            var idade = Number(txtidade)
+            var desconto = preço * 0.10
+            if (idade < 18) {
+                res.innerHTML = preço - desconto
+            } else {
+                res.innerHTML = preço
+            }
+        }
+    </script>
+</body>
+</html>

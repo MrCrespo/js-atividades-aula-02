@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verificador de Número</title>
+</head>
+<body>
+  <h1>Verificador de Número</h1>
+  Digite o número: <input type="number" name="" id="txtvel">
+  <input type="button" value="Verificar" onclick="verificar()">
+  <div id="res"></div>
+  <script>
+    function verificar() {
+      var txtn = document.getElementById('txtvel')
+      var res = document.getElementById('res')
+      var numero = Number(txtn.value)
+      res.innerHTML = "O número é " + numero
+      if (numero % 2 === 0) {
+        res.innerHTML += " e é PAR."
+      } else {
+        res.innerHTML += " e é IMPAR."
+      }
+    }
+  </script>
+</body>
+</html>

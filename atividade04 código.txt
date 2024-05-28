@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de vogal e consoante</title>
+</head>
+<body>
+    <h1>Verificador de vogal e consoante</h1>
+    Digite uma letra: <input type="text" name="" id="txtletra" maxlength="1">
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="res">
+
+    </div>
+    <script>
+        function verificar() {
+            var txtletra = document.getElementById('txtletra')
+            var res = document.getElementById('res')
+            var letra = txtletra.value.toLowerCase()
+            if (letra === 'a' || letra === 'e' || letra === 'i' || letra === 'o' || letra === 'u') {
+                res.innerHTML = 'Vogal'
+            } else {
+                res.innerHTML = 'Consoante'
+            }
+        }
+    </script>
+</body>
+</html>

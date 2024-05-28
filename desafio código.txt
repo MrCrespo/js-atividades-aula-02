@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Áreas e Volumes</title>
+</head>
+<body>
+    <input type="button" value="Calcular Área do Triângulo" onclick="calcular('triangulo')">
+    <input type="button" value="Calcular Área do Retângulo" onclick="calcular('retangulo')">
+    <input type="button" value="Calcular Volume do Cubo" onclick="calcular('cubo')">
+    <input type="button" value="Calcular Área do Círculo" onclick="calcular('circulo')">
+
+    <script>
+        function calcular(tipo) {
+            var resultado;
+            switch(tipo) {
+                case 'triangulo':
+                    var base = Number(prompt("Digite a base do triângulo:"));
+                    var alturaTriangulo = Number(prompt("Digite a altura do triângulo:"));
+                    if (isNaN(base) || isNaN(alturaTriangulo)) {
+                        alert("Por favor, insira valores numéricos válidos.");
+                        return;
+                    }
+                    resultado = (base * alturaTriangulo) / 2;
+                    alert("A área do triângulo é: " + resultado);
+                    break;
+                case 'retangulo':
+                    var largura = Number(prompt("Digite a largura do retângulo:"));
+                    var alturaRetangulo = Number(prompt("Digite a altura do retângulo:"));
+                    if (isNaN(largura) || isNaN(alturaRetangulo)) {
+                        alert("Por favor, insira valores numéricos válidos.");
+                        return;
+                    }
+                    resultado = largura * alturaRetangulo;
+                    alert("A área do retângulo é: " + resultado);
+                    break;
+                case 'cubo':
+                    var lado = Number(prompt("Digite o lado do cubo:"));
+                    if (isNaN(lado)) {
+                        alert("Por favor, insira um valor numérico válido.");
+                        return;
+                    }
+                    resultado = lado ** 3;
+                    alert("O volume do cubo é: " + resultado);
+                    break;
+                case 'circulo':
+                    var raio = Number(prompt("Digite o raio do círculo:"));
+                    if (isNaN(raio)) {
+                        alert("Por favor, insira um valor numérico válido.");
+                        return;
+                    }
+                    resultado = Math.PI * (raio ** 2);
+                    alert("A área do círculo é: " + resultado);
+                    break;
+                default:
+                    alert("Opção inválida.");
+            }
+        }
+    </script>
+</body>
+</html>
